@@ -32,5 +32,6 @@ bin/
 .iml
 /lvwei-vue-server-core/target
 /lvwei-vue-server-common/target
+/lvwei-vue-server-deploy/target
 /.idea/
-/myLogs/
+/logs/
