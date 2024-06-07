@@ -19,6 +19,10 @@ public class LogUtil {
         logger.debug(message);
     }
 
+    public static void error(String message,  Object... arguments) {
+        logger.error(message, arguments);
+    }
+
     public static void error(String message, Throwable t) {
         logger.error(message, t);
     }

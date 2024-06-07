@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lvwei.vue.server.core.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="cn.lvwei.vue.server.core.entity.User">
+        <id property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="userNo" column="user_no" jdbcType="VARCHAR"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="age" column="age" jdbcType="INTEGER"/>
+        <result property="userMail" column="user_mail" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="deleteFlg" column="delete_flg" jdbcType="CHAR"/>
+        <result property="createUserId" column="create_user_id" jdbcType="BIGINT"/>
+        <result property="createDateTime" column="create_date_time" jdbcType="TIMESTAMP"/>
+        <result property="updateUserId" column="update_user_id" jdbcType="BIGINT"/>
+        <result property="updateDateTime" column="update_date_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id
+        ,user_no,user_name,
+        age,user_mail,password,
+        remark,delete_flg,create_user_id,
+        create_date_time,update_user_id,update_date_time
+    </sql>
+</mapper>
