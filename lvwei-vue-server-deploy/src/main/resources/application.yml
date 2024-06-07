@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: lvwei-vue-server
+  jackson:
+    default-property-inclusion: non_null
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/car?characterEncoding=utf8&serverTimezone=Asia/Shanghai
@@ -56,9 +58,9 @@ spring:
 knife4j:
   enable: true
   documents:
-    - group: 2.X版本
-      name: 接口签名
-      locations: classpath:sign/*
+    - group: lvwei-vue-server
+      name: 学习vue的后台接口
+      locations: classpath:api/**
   setting:
     language: zh-CN
     enable-swagger-models: true
@@ -71,7 +73,7 @@ knife4j:
     enable-filter-multipart-apis: false
     enable-request-cache: true
     enable-host: false
-    enable-host-text: 192.168.0.193:8000
+    enable-host-text: localhost:10001
     enable-home-custom: true
     home-custom-path: classpath:markdown/home.md
     enable-search: false
@@ -88,3 +90,14 @@ knife4j:
     enable: false
     username: test
     password: 12313
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      logic-delete-field: delete_flg
+  mapper-locations: classpath:/mapper/*.xml
